@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #333;
+  color: #222;
+}
+
+.container {
+  transform-origin: top left;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fafafa;
+  transition: 0.5s;
+  overflow-x: visible;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+/*---------------button circle-----------------*/
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  overflow: hidden;
+}
+
+.circle {
+  position: relative;
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+/*------------------section--------------------*/
+.content {
+  margin: auto;
+  padding: 80px;
+}
+
+.content div {
+  margin: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.content p {
+  text-align: justify;
+}
+
+/*-----------------------Nav--------------------*/
+nav {
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  overflow-x: visible;
+}
+
+nav ul {
+  overflow-x: visible;
+}
+
+nav ul li {
+  position: relative;
+  left: -150px;
+  list-style: none;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.container.show-nav + nav li {
+  transition-delay: 0.3s;
+}
+
+.container.show-nav + nav li:first-child {
+  left: 0;
+}
+
+.container.show-nav + nav ul li:nth-of-type(2) {
+  left: 20px;
+}
+
+.container.show-nav + nav ul li:last-child {
+  left: 40px;
+}
